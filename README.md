@@ -50,15 +50,22 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 2. Move the LightsailDefaultPrivateKey.pema file to your local directory ~/.ssh/
 
-3. Change the directory permissions(write and read) chmod 700 ~/.ssh 
+3. Change the directory permissions(write and read) 
+	```
+	chmod 700 ~/.ssh 
+	```
 
 4. Login to your instance from your locla terminal 
 
+	```
 	$ ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema ubuntu@34.213.165.152
+	```
 
 5. update currently installed packages by runing 
+	```
 	$ sudo apt-get update 
 	$ sudo apt-get upgrade
+	```
 
 ### Configure the firewall
 
@@ -68,6 +75,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 3. Allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
 
+	```
 	$ sudo ufw allow 2200/tcp.
 
 	$ sudo ufw allow 80/tcp.
@@ -75,14 +83,20 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 	$ sudo ufw allow 123/udp.
 
 	$ sudo ufw enable.
+	```
 
-4. check the firewall status, Run $ sudo ufw status 
+4. check the firewall status, Run 
+	```
+	$ sudo ufw status 
+	```
 
 5. Update the external (Amazon Lightsail) firewall on the browser, change the firewall configuration to match the internal firewall settings above 
 
 6. login to your instance
 
+	```
 	ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema.rsa -p 2200 ubuntu@34.213.165.152
+	```
     
 ### Create a new user named `grader`
 
@@ -92,7 +106,10 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 3. Give `grader` root privileges
 
-	Edit the /etc/sudoers file, by running $ sudo visudo
+	Edit the /etc/sudoers file, by running 
+	```
+	$ sudo visudo
+	```
 
 	Search for a line that :`root  ALL=(ALL:ALL) ALL`
 
@@ -102,9 +119,12 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 4. Generate Key pair on my local machine using ssh-keygen and run it.
 
-5. Login to virtual machine, Switch to `grader` user, and create a new directory. run $ mkdir .ssh
+5. Login to virtual machine, Switch to `grader` user, and create a new directory. run 
+	```
+	$ mkdir .ssh
+	```
 
-6. Run $ touch .ssh/authorized_keys to create the file 
+6. Run ``` $ touch .ssh/authorized_keys``` to create the file 
 
 7. Copy the contents of the authorized_keys file from your local machin, and paste them in the authorized_keys file at .ssh/ directory on the virtual machine
 

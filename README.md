@@ -3,7 +3,7 @@
 This is a set of instructions on how to set up a Ubuntu Linux server to host my web application.
 
 
-## Server details
+## Server Details
 
 The IP address is 34.213.165.152
 
@@ -27,7 +27,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 
 
-## The Configuration steps
+## The Configuration Steps
 
 ### Create an instance with Amazon Lightsail
 

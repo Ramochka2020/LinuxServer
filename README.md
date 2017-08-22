@@ -279,7 +279,7 @@ Below is a list of sources I used to complete this project.
 
 - <https://www.postgresql.org/docs/9.0/static/sql-createrole.html>
 
--Stackoverflow 
+- Stackoverflow 
 - <http://www.linfo.org/index.html>
 
 - <https://httpd.apache.org/docs/2.4/>

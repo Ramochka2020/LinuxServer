@@ -163,7 +163,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	Connect to psql (the terminal for interacting with PostgreSQL) by running ```$ psql```
 
-	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password;'```
+	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password';```
 
 	Give the `catalog` user the ability to create databases ``` ALTER USER catalog CREATEDB;```
 
@@ -288,7 +288,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 4. change the address in Google Developers Console -> API Manager -> Credentials, 
 in the web client under "Authorized JavaScript origins".
 
-5.launch the app, ```$ sudo python __init__.py``` and visit http://34.213.165.152
+5. launch the app, ```$ sudo python __init__.py``` and visit http://34.213.165.152
 
 
 ### Disable remote login of the root user
@@ -319,7 +319,7 @@ in the web client under "Authorized JavaScript origins".
 
 - <https://www.postgresql.org/docs/9.0/static/sql-createrole.html>
 
-- Stackoverflow 
+- [Stackoverflow](https://stackoverflow.com/) 
 
 - <http://www.linfo.org/index.html>
 

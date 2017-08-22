@@ -154,7 +154,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 	```
 	$ sudo apt-get install libapache2-mod-wsgi python-dev
 
-	$ sudo service apache2 start
+	$ sudo service apache2 restart
 	```
 
 3. Install PostgreSQL, by running $ sudo apt-get install postgresql
@@ -163,7 +163,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	Connect to psql (the terminal for interacting with PostgreSQL) by running ```$ psql```
 
-	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password';```
+	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password;'```
 
 	Give the `catalog` user the ability to create databases ``` ALTER USER catalog CREATEDB;```
 

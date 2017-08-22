@@ -269,9 +269,9 @@ in the web client under "Authorized JavaScript origins".
 Below is a list of sources I used to complete this project.
 
 - [Udacity course about Linux and everything related to it]
-(https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014)
+[https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014]
 
-- [Udacity forums] (https://discussions.udacity.com/)
+- [Udacity forums] [https://discussions.udacity.com/]
 
 - <https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps>
 

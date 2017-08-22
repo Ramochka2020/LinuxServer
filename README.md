@@ -102,7 +102,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 1. Run $ sudo adduser grader and Fill out information 
 
-2. switch to the `grader` user, run $ su - grader 
+2. switch to the `grader` user, run ```$ su - grader ```
 
 3. Give `grader` root privileges
 
@@ -128,9 +128,9 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 7. Copy the contents of the authorized_keys file from your local machin, and paste them in the authorized_keys file at .ssh/ directory on the virtual machine
 
-8. change the file permission so owner can read, write and execute Run $ chmod 700 .ssh 
+8. change the file permission so owner can read, write and execute Run ```$ chmod 700 .ssh ``` 
 
-9. Run $ chmod 644 .ssh/authorized_keys 
+9. Run ```$ chmod 644 .ssh/authorized_keys ```
 
 10. Log in as the grader using the following command:
 
@@ -145,27 +145,29 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 1. Run ``` $ sudo dpkg-reconfigure tzdata ``` , and follow the instructions (UTC is under the 'None of the above' category)
 
-1. Test to make sure the timezone is configured correctly by running`date`
+1. Test to make sure the timezone is configured correctly by running ```$ date```
 
 ## Deploy My project
 
-1. Install Apache, Run $ sudo apt-get install apache2 
+1. Install Apache, Run ```$ sudo apt-get install apache2 ```
 
 2. Install the mod_wsgi package, to serve Flask applications, along with python-dev
 
+	```
 	$ sudo apt-get install libapache2-mod-wsgi python-dev
 
 	$ sudo service apache2 start
+	```
 
 3. Install PostgreSQL, by running $ sudo apt-get install postgresql
 
-	Connect as postgres user, by running $ sudo su - postgres 
+	Connect as postgres user, by running ```$ sudo su - postgres``` 
 
-	Connect to psql (the terminal for interacting with PostgreSQL) by running $ psql
+	Connect to psql (the terminal for interacting with PostgreSQL) by running ```$ psql```
 
 	Create `catalog` user, by running CREATE USER catalog WITH PASSWORD 'password';
 
-	Give the `catalog` user the ability to create databases # ALTER USER catalog CREATEDB;
+	Give the `catalog` user the ability to create databases ``` ALTER USER catalog CREATEDB;```
 
 	Create the 'catalog' database owned by catalog user, 
 	```
@@ -175,7 +177,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 	Give user catalog permission to catalog database
 	$ GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
 
-	Exit psql by running $ \q
+	Exit psql by running ```$ \q```
 
 	Switch back to the `grader` user, by running 
 	```
@@ -186,13 +188,13 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 5. Create a directory called 'FlaskApp' in the /var/www/ directory
 
-6. clone the catalog project,run $ sudo git clone https://github.com/Ramochka2020/item-catalog.git
+6. clone the catalog project,run ```$ sudo git clone https://github.com/Ramochka2020/item-catalog.git```
 
-7. Rename 'item-catalog' directory to FlaskApp, $ sudo mv ./item-catalog/FlaskApp 
+7. Rename 'item-catalog' directory to FlaskApp, ```$ sudo mv ./item-catalog/FlaskApp ```
 
 8. Move to /var/www/FaskApp/FlaskApp directory
 
-9. Change the name of the app.py file to __init__.py, by running $ mv app.py __init__.py
+9. Change the name of the app.py file to __init__.py, by running ```$ mv app.py __init__.py```
 
 10. Switch the database in the application from SQLite to PostgreSQL
 
@@ -200,7 +202,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
    
 	engine = create_engine('postgresql://catalog:password@localhost/catalog')
 
-11. install pip,run $ sudo apt-get install python-pip
+11. install pip,run ```$ sudo apt-get install python-pip```
 
 12.install the following dependenies 
 
@@ -265,7 +267,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
     $ from FlaskApp import app as application
     $ application.secret_key = ''
 ```
-3. Resart Apache: `sudo service apache2 restart`
+3. Resart Apache: ```sudo service apache2 restart```
 
 4. Set up the database schema and populate the database
 
@@ -292,7 +294,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 4. change the address in Google Developers Console -> API Manager -> Credentials, 
 in the web client under "Authorized JavaScript origins".
 
-5.launch the app, $ sudo python __init__.py and visit http://34.213.165.152
+5.launch the app, ```$ sudo python __init__.py``` and visit http://34.213.165.152
 
 
 ### Disable remote login of the root user

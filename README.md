@@ -82,7 +82,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 6. login to your instance
 
-...ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema.rsa -p 2200 ubuntu@34.213.165.152
+	ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema.rsa -p 2200 ubuntu@34.213.165.152
     
 ### Create a new user named `grader`
 
@@ -92,13 +92,13 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 3. Give `grader` root privileges
 
-...Edit the /etc/sudoers file, by running $ sudo visudo
+	Edit the /etc/sudoers file, by running $ sudo visudo
 
-......Search for a line that :`root  ALL=(ALL:ALL) ALL`
+	Search for a line that :`root  ALL=(ALL:ALL) ALL`
 
-......Add the following line below it:`grader ALL=(ALL:ALL) ALL`
+	Add the following line below it:`grader ALL=(ALL:ALL) ALL`
 
-...Save and close the visudo file
+	Save and close the visudo file
 
 4. Generate Key pair on my local machine using ssh-keygen and run it.
 
@@ -114,9 +114,9 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 10. Log in as the grader using the following command:
 
-...ssh -i ~/.ssh/grader_key -p 2200 grader@34.213.165.152
+	ssh -i ~/.ssh/grader_key -p 2200 grader@34.213.165.152
 
-...pop-up window will ask for `grader`'s password
+	pop-up window will ask for `grader`'s password
 
 
 ### Configure the local timezone to UTC
@@ -131,28 +131,28 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 2. Install the mod_wsgi package, to serve Flask applications, along with python-dev
 
-...$ sudo apt-get install libapache2-mod-wsgi python-dev
+	$ sudo apt-get install libapache2-mod-wsgi python-dev
 
-...$ sudo service apache2 start
+	$ sudo service apache2 start
 
 3. Install PostgreSQL, by running $ sudo apt-get install postgresql
 
-...Connect as postgres user, by running $ sudo su - postgres 
+	Connect as postgres user, by running $ sudo su - postgres 
 
-...Connect to psql (the terminal for interacting with PostgreSQL) by running $ psql
+	Connect to psql (the terminal for interacting with PostgreSQL) by running $ psql
 
-...Create `catalog` user, by running CREATE USER catalog WITH PASSWORD 'password';
+	Create `catalog` user, by running CREATE USER catalog WITH PASSWORD 'password';
 
-...Give the `catalog` user the ability to create databases # ALTER USER catalog CREATEDB;
+	Give the `catalog` user the ability to create databases # ALTER USER catalog CREATEDB;
 
-...Create the 'catalog' database owned by catalog user, $ CREATE DATABASE catalog WITH OWNER catalog;
+	Create the 'catalog' database owned by catalog user, $ CREATE DATABASE catalog WITH OWNER catalog;
 
-...Give user catalog permission to catalog database
-......$ GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
+	Give user catalog permission to catalog database
+	$ GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
 
-...Exit psql by running $ \q
+	Exit psql by running $ \q
 
-...Switch back to the `grader` user, by running $ exit
+	Switch back to the `grader` user, by running $ exit
 	
 4. Install git, Run $ sudo apt-get install git
 
@@ -168,25 +168,25 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 10. Switch the database in the application from SQLite to PostgreSQL
 
-...engine = create_engine('sqlite://catalog1.db') to 
+	engine = create_engine('sqlite://catalog1.db') to 
    
-...engine = create_engine('postgresql://catalog:password@localhost/catalog')
+	engine = create_engine('postgresql://catalog:password@localhost/catalog')
 
 11. install pip,run $ sudo apt-get install python-pip
 
 12.install the following dependenies 
 
-...sudo pip install httplib2
+	sudo pip install httplib2
 
-...sudo pip install requests
+	sudo pip install requests
 
-...sudo pip install --upgrade oauth2client
+	sudo pip install --upgrade oauth2client
+	
+	sudo pip install sqlalchemy
 
-...sudo pip install sqlalchemy
+	sudo pip install flask
 
-...sudo pip install flask
-
-...sudo apt-get install libpq-dev
+	sudo apt-get install libpq-dev
 
 ### Set up and enable a virtual host
 
@@ -212,7 +212,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 2. Enable the virtual host,run $ sudo a2ensite FlaskApp
 
-...Run $ sudo service apache2 restart
+	Run $ sudo service apache2 restart
 
 
 ### Create the catalog.wsgi File
@@ -234,9 +234,9 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 4. Set up the database schema and populate the database
 
-...1. While in the /var/www/FlaskApp/FlaskApp/ directory, run $ database_init.py
+	1. While in the /var/www/FlaskApp/FlaskApp/ directory, run $ database_init.py
 
-...2. Resart Apache again: $ sudo service apache2 restart
+	2. Resart Apache again: $ sudo service apache2 restart
 
 ### Authenticate login through Google:
 
@@ -257,38 +257,39 @@ in the web client under "Authorized JavaScript origins".
 ### Disable remote login of the root user
 
 1. Edit the sshd_config and set PermitRootLogin to no and save the file
-...$ sudo nano /etc/ssh/sshd_config
+	$ sudo nano /etc/ssh/sshd_config
 
 2. Restart ssh service
-...$ sudo service ssh restart
+	$ sudo service ssh restart
 
 ### Sources
 
-$ sudo tail -50 /var/log/apache2/error.log to see all the error in the server
+-$ sudo tail -50 /var/log/apache2/error.log to see all the error in the server
 
 Below is a list of sources I used to complete this project.
 
-...[Udacity course about Linux and everything related to it]
+- [Udacity course about Linux and everything related to it]
 (https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014)
 
-...[Udacity forums] (https://discussions.udacity.com/)
+- [Udacity forums] (https://discussions.udacity.com/)
 
-...<https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps>
+- <https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps>
 
-...<https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04>
-...<https://www.postgresql.org/docs/9.0/static/sql-createrole.html>
+- <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04>
 
-...Stackoverflow 
-...<http://www.linfo.org/index.html>
+- <https://www.postgresql.org/docs/9.0/static/sql-createrole.html>
 
-...<https://httpd.apache.org/docs/2.4/>
+-Stackoverflow 
+- <http://www.linfo.org/index.html>
 
-...<https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/2/html/Getting_Started_Guide/ch02s03.html>
+- <https://httpd.apache.org/docs/2.4/>
 
-...<https://askubuntu.com/questions/168280/how-do-i-grant-sudo-privileges-to-an-existing-user>
+- <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/2/html/Getting_Started_Guide/ch02s03.html>
 
-...<https://www.liquidweb.com/kb/how-to-add-a-user-and-grant-root-privileges-on-ubuntu-14-04/>
+- <https://askubuntu.com/questions/168280/how-do-i-grant-sudo-privileges-to-an-existing-user>
 
-...<https://help.ubuntu.com/community/RootSudo#Re-disabling_your_root_account>
+- <https://www.liquidweb.com/kb/how-to-add-a-user-and-grant-root-privileges-on-ubuntu-14-04/>
 
-...<https://www.a2hosting.com/kb/getting-started-guide/accessing-your-account/disabling-ssh-logins-for-root>
+- <https://help.ubuntu.com/community/RootSudo#Re-disabling_your_root_account>
+
+- <https://www.a2hosting.com/kb/getting-started-guide/accessing-your-account/disabling-ssh-logins-for-root>

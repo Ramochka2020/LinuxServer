@@ -71,7 +71,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 1. Chang the SSH port from `22` to `2200` in the sshd_config file located at /etc/ssh
 
-2. Restart SSH, by running $ sudo service ssh restart           
+2. Restart SSH, by running ``` $ sudo service ssh restart ```          
 
 3. Allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
 
@@ -134,14 +134,16 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 10. Log in as the grader using the following command:
 
+	```
 	ssh -i ~/.ssh/grader_key -p 2200 grader@34.213.165.152
+	```
 
 	pop-up window will ask for `grader`'s password
 
 
 ### Configure the local timezone to UTC
 
-1. Run $ sudo dpkg-reconfigure tzdata, and follow the instructions (UTC is under the 'None of the above' category)
+1. Run ``` $ sudo dpkg-reconfigure tzdata ``` , and follow the instructions (UTC is under the 'None of the above' category)
 
 1. Test to make sure the timezone is configured correctly by running`date`
 

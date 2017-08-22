@@ -48,20 +48,20 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 1. Download the instance's default key form Amazon Lightsail Account page
 
-2. Move the LightsailDefaultPrivateKey.pema file to your local directory ~/.ssh/
+2. Move the LightsailDefaultPrivateKey.pem file to your local directory ~/.ssh/
 
 3. Change the directory permissions(write and read) 
 	```
 	chmod 700 ~/.ssh 
 	```
 
-4. Login to your instance from your locla terminal 
+4. Login to your instance from your local terminal 
 
 	```
 	$ ssh -i ~/.ssh/LightsailDefaultPrivateKey.pem ubuntu@34.213.165.152
 	```
 
-5. update currently installed packages by runing 
+5. Update currently installed packages by runing 
 	```
 	$ sudo apt-get update 
 	$ sudo apt-get upgrade
@@ -101,16 +101,13 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
     
 ### Create a new user named `grader`
 
-1. Run $ sudo adduser grader and Fill out information 
+1. Run ```$ sudo adduser grader``` and Fill out information 
 
 2. switch to the `grader` user, run ```$ su - grader ```
 
 3. Give `grader` root privileges
 
-	Edit the /etc/sudoers file, by running 
-	```
-	$ sudo visudo
-	```
+	Edit the /etc/sudoers file, by running ```$ sudo visudo```
 
 	Search for a line that :`root  ALL=(ALL:ALL) ALL`
 
@@ -166,7 +163,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	Connect to psql (the terminal for interacting with PostgreSQL) by running ```$ psql```
 
-	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password'```;
+	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password';```
 
 	Give the `catalog` user the ability to create databases ``` ALTER USER catalog CREATEDB;```
 
@@ -176,7 +173,9 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 	```
 
 	Give user catalog permission to catalog database
+	```
 	$ GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
+	```
 
 	Exit psql by running ```$ \q```
 
@@ -243,9 +242,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 2. Enable the virtual host,run 
 	```
 	$ sudo a2ensite FlaskApp
-	```
-
-	```
+	
 	$ sudo service apache2 restart
 	```
 

@@ -54,11 +54,11 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 4. Login to your instance from your locla terminal 
 
- ..$ ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema ubuntu@34.213.165.152
+	$ ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema ubuntu@34.213.165.152
 
 5. update currently installed packages by runing 
-... $ sudo apt-get update 
-... $ sudo apt-get upgrade
+	$ sudo apt-get update 
+	$ sudo apt-get upgrade
 
 ### Configure the firewall
 

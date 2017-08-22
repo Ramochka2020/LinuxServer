@@ -95,7 +95,8 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 6. login to your instance
 
 	```
-	ssh -i ~/.ssh/LightsailDefaultPrivateKey.pema.rsa -p 2200 ubuntu@34.213.165.152
+	ssh -i ~/.ssh/LightsailDefaultPrivateKey-us-west-2.pem -p 2200 ubuntu@34.213.165.152
+
 	```
     
 ### Create a new user named `grader`
@@ -273,7 +274,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	1. While in the /var/www/FlaskApp/FlaskApp/ directory, run
 		```
-		$ database_init.py
+		$ python database_init.py
 		```
 
 	2. Resart Apache again: 
@@ -311,9 +312,9 @@ in the web client under "Authorized JavaScript origins".
 
 ### Sources
 
--$ sudo tail -50 /var/log/apache2/error.log to see all the error in the server
+- ```$ sudo tail -50 /var/log/apache2/error.log``` to see all the error in the server
 
-Below is a list of sources I used to complete this project.
+  Below is a list of sources I used to complete this project.
 
 - [Udacity course about Linux and everything related to it](https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014)
 
@@ -326,11 +327,12 @@ Below is a list of sources I used to complete this project.
 - <https://www.postgresql.org/docs/9.0/static/sql-createrole.html>
 
 - Stackoverflow 
+
 - <http://www.linfo.org/index.html>
 
 - <https://httpd.apache.org/docs/2.4/>
 
-- <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/2/html/Getting_Started_Guide/ch02s03.html>
+- <https://access.redhat.com/documentation/enUS/Red_Hat_Enterprise_Linux_OpenStack_Platform/2/html/Getting_Started_Guide/ch02s03.html>
 
 - <https://askubuntu.com/questions/168280/how-do-i-grant-sudo-privileges-to-an-existing-user>
 

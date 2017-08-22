@@ -68,13 +68,13 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 3. Allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
 
-...$ sudo ufw allow 2200/tcp.
+	$ sudo ufw allow 2200/tcp.
 
-...$ sudo ufw allow 80/tcp.
+	$ sudo ufw allow 80/tcp.
 
-...$ sudo ufw allow 123/udp.
+	$ sudo ufw allow 123/udp.
 
-...$ sudo ufw enable.
+	$ sudo ufw enable.
 
 4. check the firewall status, Run $ sudo ufw status 
 

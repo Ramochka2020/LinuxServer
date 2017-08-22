@@ -166,7 +166,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	Connect to psql (the terminal for interacting with PostgreSQL) by running ```$ psql```
 
-	Create `catalog` user, by running CREATE USER catalog WITH PASSWORD 'password';
+	Create `catalog` user, by running ```CREATE USER catalog WITH PASSWORD 'password'```;
 
 	Give the `catalog` user the ability to create databases ``` ALTER USER catalog CREATEDB;```
 
@@ -180,12 +180,9 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	Exit psql by running ```$ \q```
 
-	Switch back to the `grader` user, by running 
-	```
-	$ exit
-	```
+	Switch back to the `grader` user, by running ```$ exit```
 	
-4. Install git, Run $ sudo apt-get install git
+4. Install git, Run ```$ sudo apt-get install git```
 
 5. Create a directory called 'FlaskApp' in the /var/www/ directory
 
@@ -205,7 +202,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 11. install pip,run ```$ sudo apt-get install python-pip```
 
-12.install the following dependenies 
+12. install the following dependenies 
 
 	sudo pip install httplib2
 
@@ -255,7 +252,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 ### Create the catalog.wsgi File
 
-1. create a file called catalog.wsgi in /var/www/FlaskApp
+1. Create a file called catalog.wsgi in /var/www/FlaskApp
 
 2. Add the following to the file:
 
@@ -289,7 +286,6 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 2. Change it from 'client_secrets.json' to '/var/www/FaskApp/FlaskApp/client_secrets.json' 
 
 3. change the javascript_origins field to the IP address and AWS assigned URL of the host. 
-
 "javascript_origins":["http://34.213.165.152", "http://ec2-34-213-165-152.us-west-2.compute.amazonaws.com"]
 
 4. change the address in Google Developers Console -> API Manager -> Credentials, 
@@ -312,7 +308,7 @@ in the web client under "Authorized JavaScript origins".
 
 ### Sources
 
-- ```$ sudo tail -50 /var/log/apache2/error.log``` to see all the error in the server
+- ```$ sudo tail -50 /var/log/apache2/error.log``` to see all the all error for the server
 
   Below is a list of sources I used to complete this project.
 

@@ -223,6 +223,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 2. Add the following to the file:
 
+```
     # !/usr/bin/python
     $ import sys
     $ import logging
@@ -230,7 +231,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
     $ sys.path.insert(0,"/var/www/FlaskApp/")
     $ from FlaskApp import app as application
     $ application.secret_key = ''
-
+```
 3. Resart Apache: `sudo service apache2 restart`
 
 4. Set up the database schema and populate the database

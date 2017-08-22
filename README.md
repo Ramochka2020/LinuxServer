@@ -192,7 +192,8 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 1. Edite 000-default.conf fiel in the directory /etc/apache2/sites-available/ 
 
-''' <VirtualHost *:80>
+```
+<VirtualHost *:80>
 		ServerName mywebsite.com
 		ServerAdmin admin@mywebsite.com
 		WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
@@ -209,7 +210,7 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 		LogLevel warn
 		CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-'''
+```
 
 2. Enable the virtual host,run $ sudo a2ensite FlaskApp
 

@@ -145,14 +145,20 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 	Give the `catalog` user the ability to create databases # ALTER USER catalog CREATEDB;
 
-	Create the 'catalog' database owned by catalog user, $ CREATE DATABASE catalog WITH OWNER catalog;
+	Create the 'catalog' database owned by catalog user, 
+	```
+	$ CREATE DATABASE catalog WITH OWNER catalog;
+	```
 
 	Give user catalog permission to catalog database
 	$ GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
 
 	Exit psql by running $ \q
 
-	Switch back to the `grader` user, by running $ exit
+	Switch back to the `grader` user, by running 
+	```
+	$ exit
+	```
 	
 4. Install git, Run $ sudo apt-get install git
 
@@ -212,9 +218,14 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 </VirtualHost>
 ```
 
-2. Enable the virtual host,run $ sudo a2ensite FlaskApp
+2. Enable the virtual host,run 
+	```
+	$ sudo a2ensite FlaskApp
+	```
 
-	Run $ sudo service apache2 restart
+	```
+	$ sudo service apache2 restart
+	```
 
 
 ### Create the catalog.wsgi File
@@ -236,9 +247,15 @@ The URL is: http://34.213.165.152 or http://ec2-34-213-165-152.compute-1.amazona
 
 4. Set up the database schema and populate the database
 
-	1. While in the /var/www/FlaskApp/FlaskApp/ directory, run $ database_init.py
+	1. While in the /var/www/FlaskApp/FlaskApp/ directory, run
+		```
+		$ database_init.py
+		```
 
-	2. Resart Apache again: $ sudo service apache2 restart
+	2. Resart Apache again: 
+		```
+		$ sudo service apache2 restart
+		```
 
 ### Authenticate login through Google:
 
@@ -259,10 +276,14 @@ in the web client under "Authorized JavaScript origins".
 ### Disable remote login of the root user
 
 1. Edit the sshd_config and set PermitRootLogin to no and save the file
+	```
 	$ sudo nano /etc/ssh/sshd_config
+	```
 
 2. Restart ssh service
+	```
 	$ sudo service ssh restart
+	```
 
 ### Sources
 
@@ -270,10 +291,9 @@ in the web client under "Authorized JavaScript origins".
 
 Below is a list of sources I used to complete this project.
 
-- [Udacity course about Linux and everything related to it]
-[https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014]
+- [Udacity course about Linux and everything related to it](https://classroom.udacity.com/nanodegrees/nd004/parts/00413454014)
 
-- [Udacity forums] [https://discussions.udacity.com/]
+- [Udacity forums](https://discussions.udacity.com/)
 
 - <https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps>
 
